@@ -212,7 +212,7 @@ like this, if leading spaces are no-no."
   ;; We used the shorthand syntax for it then:
   '(1 2 3)
 
-  ;; Convince yourself they are the same witg the `=` function:
+  ;; Convince yourself they are the same with the `=` function:
   (= (quote (1 2 3))
      '(1 2 3))
   ;; Clojure has value semantics. Any data structures
@@ -264,14 +264,14 @@ like this, if leading spaces are no-no."
     'value-if-true
     'value-if-false)
   ;; Rumour has it that all conditional constructs (macros)
-  ;; are built using `if`. Try imagine a programming lnguage
+  ;; are built using `if`. Try to imagine a programming language
   ;; without conditionals!
 
   ;; We'll return to `if` and conditionals. Let's wrap
   ;; the special forms section up with just noting that
   ;; together with _how_ Clojure reads and evaluates code,
   ;; the special forms make up the Clojure langugage
-  ;; itself. The next level och building blocks are
+  ;; itself. The next level of building blocks are
   ;; macros. But let's investigate this with how code
   ;; is read first...
   )
@@ -286,8 +286,8 @@ like this, if leading spaces are no-no."
   ;; re-assembled, figuring out what is a function,
   ;; a macro or special form.
 
-  ;; In doing this whitespace place a key role and there
-  ;; us also some extra syntax rules are in play.
+  ;; In doing this whitespace plays a key role, there
+  ;; are also some extra syntax rules in play.
 
   ;; == WHITESPACE ==
   ;; Most things you would think counts as whitespace
@@ -567,8 +567,8 @@ to the compiler") "This is not ignored"
         :let [d' (- x y)
               d (Math/abs d')]]
     d)
-  ;; Filters and bindings can be used together.
-  ;; Use both `:let` and `:when` to make this
+  ;; Filters and bindings can be used together can you
+  ;; Use both `:let` and `:when` to meak this
   ;; comprehension return a list of all `[x y]` where
   ;; their sum is odd. The functions `+` and `odd?`
   ;; are your friends here.
@@ -584,9 +584,9 @@ to the compiler") "This is not ignored"
   ;; functions, they are not. The compiler would not
   ;; like it if you are passing undefined symbols to a
   ;; function. This is valid code:
-  (let [abc 1] abc)
+  (let [abc 1] 2)
   ;; This isn't.
-  (str [abc 1] abc)
+  (str [abc 1] 2)
   ;; We are mentioning this here so that you will know
   ;; why when you ask other Clojurians something like:
   ;;   ”Why is X not working, when Y is?” 
@@ -856,7 +856,6 @@ to the compiler") "This is not ignored"
   ;; to decide _how_ it should be filtered, by writing
   ;; the predicate. Sometimes you don't even need to
   ;; do that, Clojure core is rich with predicates
-  (zero? 0)
   (even? 0)
   (neg? 0)
   (pos? 0)
@@ -864,13 +863,13 @@ to the compiler") "This is not ignored"
   (empty? "")
   (empty? [])
   (empty? (take 0 [1 2 3]))
-  (integer? -2/1)
+  (integer? 2/1)
   (indexed? [1 2 3])
   (indexed? '(1 2 3))
   ;; What's a predicate? For the purpose of this guide
   ;; A predicate is a function testing things for
-  ;; truthiness. It is convention that these functions
-  ;; end with `?`. Many take only one argument.
+  ;; truthiness. Some take only one argument, and it is
+  ;; convention that these functions end with `?`.
   
   ;; A handy predicate is `some?` which tests for
   ;; "somethingness”, if it is not `nil` it is
@@ -886,34 +885,28 @@ to the compiler") "This is not ignored"
   ;; right? You don't have to
   (nil? nil)
 
-  ;; Clojure core also contains predicates that take
-  ;; a predicate plus a collection to apply it on.
+  ;; There are also predicates that take a predicate
+  ;; plus a collection to apply it on.
   ;; Such as `every?`
   (every? nat-int? [0 1 2])
   (every? nat-int? [-1 0 1 2])
 
-  ;; This pattern with functions that take functions
-  ;; as argument is common in Clojure. It spans beyond
-  ;; predicates. Functions that take functions as
-  ;; arguments are referred to as ”higher order
-  ;; functions”.
-  )
+  ;; (This pattern with functions that take functions
+  ;; as argument is common in Clojure.)
 
-(comment
-  ;; = Higher order functions =
-  
+
+  ;; To be continued... 
+  ;; mention filter etcetera
   )
 
 ;; To be continued...
 
-;; higher order functions
 ;; comments
 ;; immmutabibility
 ;; destructuring
 ;; atoms
 ;; nil, nil safety, nil punning
 ;; seqs
-;; map, reduce
 ;; lazyness
 ;; fizz-buzz
 
