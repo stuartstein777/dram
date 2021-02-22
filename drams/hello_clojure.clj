@@ -57,7 +57,7 @@
   ;; `last-eval-wins`, taking no argumentsm, with four
   ;; expressions in its function body. We'll return to
   ;; defining functions.)
-  ;; Calling the function (Just ealuate it.)
+  ;; Calling the function (Just evaluate it.)
   (last-eval-wins)
   ;; will cause all four expressions in the function
   ;; body to be evaluated. The result of the call will
